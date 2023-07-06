@@ -1,0 +1,8 @@
+<div class="card m-2">
+    <img class="card-img-top" [src]="game?.thumbnail" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{game?.title}}</h5>
+      <p class="card-text">{{game?.short_description}} </p>
+      <a  [routerLink]="['/games', game?.id]" class="btn btn-primary">See more...</a>
+    </div>
+</div>

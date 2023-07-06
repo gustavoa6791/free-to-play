@@ -1,0 +1,11 @@
+.card-title{
+    min-height: 50px;
+}
+
+.card-text{
+    min-height: 145px;
+    overflow: hidden; 
+    display: -webkit-box; 
+    -webkit-box-orient: vertical; 
+    -webkit-line-clamp: 6; 
+}

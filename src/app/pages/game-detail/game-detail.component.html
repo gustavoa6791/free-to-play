@@ -1,0 +1,93 @@
+<div class="d-flex flex-row-reverse">
+    <button [routerLink]="['/games']" class="m-lg-5 m-3 mb-0">regresar</button>
+</div>
+<div class="card m-2 p-2">
+    <div class="row">
+        <div class="ard-image col-lg-6">
+            <div class="image m-lg-5">
+                <img class="w-100" [src]="currentGame?.thumbnail" alt="image game">
+            </div>
+        </div>
+        <div class="card-description col-lg-6 pt-5">
+            <h1 class="card-title">{{currentGame?.title}}</h1>
+            <div class="card-description">{{currentGame?.description}}</div><br><br><br>
+            <div class="card-information">
+                <h3 class="card-title-second">Additional Information</h3>
+                <hr>
+                <div class="mx-lg-5 m-3">
+                    <div class="row">
+                        <div class="col-lg-4 col-6 my-2 my-2">
+                            <h6 class="row">Title</h6>
+                            <div class="row">{{currentGame?.title}}</div>
+                        </div>
+                        <div class="col-lg-4 col-6 my-2">
+                            <h6 class="row">Developer</h6>
+                            <div class="row">{{currentGame?.developer}}</div>
+                        </div>
+                        <div class="col-lg-4 col-6 my-2">
+                            <h6 class="row">Publisher</h6>
+                            <div class="row">{{currentGame?.publisher}}</div>
+                        </div>
+                        <div class="col-lg-4 col-6 my-2">
+                            <h6 class="row">Release Date</h6>
+                            <div class="row">{{currentGame?.release_date}}</div>
+                        </div>
+                        <div class="col-lg-4 col-6 my-2">
+                            <h6 class="row">Genre</h6>
+                            <div class="row">{{currentGame?.genre}}</div>
+                        </div>
+                        <div class="col-lg-4 col-6 my-2">
+                            <h6 class="row">Platform</h6>
+                            <div class="row">{{currentGame?.platform}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div><br><br><br>
+            <div class="card-screenshot">
+                <h3 class="card-title-second">Screenshots</h3>
+                <hr>
+                <div class="row">
+                    <div class="col-lg-4 col-md-10 col-10 m-lg-0 m-3" *ngFor="let screenshot of currentGame?.screenshots">
+                        <img width="220" [src]="screenshot.image" alt="screenshot image">
+                    </div>
+                </div>
+            </div><br><br><br>
+            <div class="card-requirements">
+                <h3 class="card-title-second">Minimum System Requirements</h3>
+                <hr>
+                <div class="mx-lg-5 m-3">
+                    <div class="row">
+                        <div class="col-lg-4 col-6 my-2">
+                            <h6 class="row">OS</h6>
+                            <div class="row">{{currentGame?.minimum_system_requirements?.os ?? "N/A" }}</div>
+                        </div>
+                        <div class="col-lg-4 col-6 my-2">
+                            <h6 class="row">Processor</h6>
+                            <div class="row">{{currentGame?.minimum_system_requirements?.processor ?? "N/A"}}</div>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-lg-4 col-6 my-2">
+                            <h6 class="row">Memory</h6>
+                            <div class="row">{{currentGame?.minimum_system_requirements?.memory ?? "N/A"}}</div>
+                        </div>
+                        <div class="col-lg-4 col-6 my-2">
+                            <h6 class="row">Graphics</h6>
+                            <div class="row">{{currentGame?.minimum_system_requirements?.graphics ?? "N/A"}}</div>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-lg-4 col-6 my-2">
+                            <h6 class="row">Storage</h6>
+                            <div class="row">{{currentGame?.minimum_system_requirements?.storage ?? "N/A"}}</div>
+                        </div>
+                        <div class="col-lg-4 col-6 my-2">
+                            <h6 class="row">Additional Notes</h6>
+                            <div class="row">Specifications may change during development</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

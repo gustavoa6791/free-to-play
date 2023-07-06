@@ -1,0 +1,40 @@
+<div class="row m-5">
+    <div class="col-4 pt-4">
+        <div class="input-group">
+            <input [(ngModel)]="filters.title" (input)="onFilters()" type="text" class="form-control" placeholder="Search by game name" aria-label="Recipient's username" aria-describedby="basic-addon2">
+            <div class="input-group-append">
+                <button class="btn btn-primary" type="button" disabled><svg xmlns="http://www.w3.org/2000/svg"
+                        width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                        <path
+                            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                    </svg></button>
+            </div>
+        </div>
+    </div>
+    <div class="col-2">
+        <div class="form-group">
+            <label for="Genre">Genre</label>
+            <select [(ngModel)]="filters.genre" class="form-control" id="Genre" (change)="onFilters()">
+              <option>...</option>
+              <option *ngFor="let genre of genreList" [value]="genre">{{genre}}</option>
+            </select>
+        </div>    
+    </div>
+    <div class="col-2">
+        <div class="form-group">
+            <label for="Genre">Plataform</label>
+            <select [(ngModel)]="filters.platform" class="form-control" id="Plataform" (change)="onFilters()">
+              <option>...</option>
+              <option *ngFor="let plataform of plataformList" [value]="plataform">{{plataform}}</option>
+            </select>
+        </div>    
+    </div>
+</div>
+
+<div class="m-lg-5 m-3">
+    <div class="row d-flex">
+        <div class="col-lg-3 col-md-4 col-sm-6" *ngFor="let game of games">
+            <app-game-card [game]="game"></app-game-card>
+        </div>
+    </div>
+</div>
