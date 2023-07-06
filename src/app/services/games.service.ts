@@ -11,10 +11,10 @@ export class GamesServices {
   constructor(private http: HttpClient) {}
 
   getGames() {
-    return this.http.get<GameModel[]>([environment.apiBaseUrl,"games"].join("/"))
+    return this.http.get<GameModel[]>([environment.apiFakeCors, environment.apiBaseUrl,"games"].join("/"))
   }
 
   getGameById(gameId?: string) {
-    return this.http.get<GameDetailModel>([environment.apiBaseUrl,`game?id=${gameId}`].join("/"))
+    return this.http.get<GameDetailModel>([environment.apiFakeCors,environment.apiBaseUrl,`game?id=${gameId}`].join("/"))
   }
 }
